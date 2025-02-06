@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node", "@vue/compiler-dom"],
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/vite/types"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "vite": ["node_modules/vite/types"]
+    }
+  },
+  "include": ["src/**/*", "src/**/*.d.ts"],
+  "exclude": ["node_modules"]
+} 
