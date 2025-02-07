@@ -68,13 +68,15 @@ type HookBindPluginOptions = {
   prefix?: string;
   bindKey?: string;
   eventKey?: string;
+  inheritAttrs?: boolean;
 };
 export default function hookBind(options?: HookBindPluginOptions): PluginOption {
-  const { prefix, bindKey, eventKey } = Object.assign(
+  const { prefix, bindKey, eventKey, inheritAttrs } = Object.assign(
     {
       prefix: "v-ehb",
       bindKey: "bindProps",
       eventKey: "bindEvents",
+      inheritAttrs: false
     },
     options
   );
@@ -108,7 +110,7 @@ export default function hookBind(options?: HookBindPluginOptions): PluginOption 
             `v-bind="${obj}.${bindKey}" v-on="${obj}.${eventKey}"`
           );
           
-          console.log(obj, 99999, newStr);
+        //   console.log(obj, 99999, newStr);
           templateStr = newStr;
         }
 

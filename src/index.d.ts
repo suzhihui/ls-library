@@ -12,6 +12,7 @@ type HookBindPluginOptions = {
     prefix?: string;
     bindKey?: string;
     eventKey?: string;
+    inheritAttrs?: boolean;
 };
 export default function hookBind(options?: HookBindPluginOptions): PluginOption;
 export {};
