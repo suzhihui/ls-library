@@ -69,7 +69,7 @@ type HookBindPluginOptions = {
   bindKey?: string;
   eventKey?: string;
 };
-export const viteHookBind = (options?: HookBindPluginOptions): PluginOption => {
+export default function hookBind(options?: HookBindPluginOptions): PluginOption {
   const { prefix, bindKey, eventKey } = Object.assign(
     {
       prefix: "v-ehb",
@@ -123,4 +123,4 @@ export const viteHookBind = (options?: HookBindPluginOptions): PluginOption => {
       return code;
     },
   };
-};
+}

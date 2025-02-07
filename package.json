@@ -1,19 +1,26 @@
 {
   "name": "vite-plugin-vue-hook-bind",
-  "version": "1.0.0",
+  "version": "1.0.10",
   "description": "Vite plugin for enhancing Vue component hook binding",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
-    "prepublishOnly": "npm run build"
+    "build": "tsup && pnpm postbuild",
+    "postbuild": "tsc --emitDeclarationOnly --declaration --project tsconfig.json"
   },
   "peerDependencies": {
-    "vite": "^5.0.0",
+    "vite": "^6.1.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
@@ -21,7 +28,7 @@
     "@vue/compiler-dom": "^3.5.13",
     "tsup": "^8.3.6",
     "typescript": "5.0.4",
-    "vite": "5.0.0"
+    "vite": "6.1.0"
   },
   "keywords": [
     "vite-plugin",
